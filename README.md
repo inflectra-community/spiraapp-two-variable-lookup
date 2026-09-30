@@ -75,7 +75,8 @@ matrixData: <JSON matrix>
 **Key Format:** `rowKey|colKey` where rowKey and colKey are the numbers at the start of the custom list items (e.g., "3 - Consulting" → key 3).
 
 ### 4. Example of the Product Setting
-[Here is an example of the SpiraApp Product Configuration](LookupTableProductSetting.PNG)
+[Here is an example of the SpiraApp Product Configuration]<img width="483" height="302" alt="LookupTableProductSetting" src="https://github.com/user-attachments/assets/d1a5490f-3f9e-43dc-aadc-322fb513ada3" />
+
 ## Usage
 
 1. Open a Requirement in Spira
