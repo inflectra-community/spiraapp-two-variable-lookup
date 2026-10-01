@@ -1,0 +1,72 @@
+guid: "7c8f9a2b-4d6e-4f1a-9b3c-5e7d8f9a1b2d"
+name: TwoVariableLookupTable
+caption: Two-Variable Lookup Tables
+summary: Configure and execute two-variable lookup tables for supporting CSA tailored risk decision logic
+description: >-
+  Computer Software Assurance (CSA) follows a tailed approach that does not use standard risk probability and impact.
+  It uses semi-quantitative custom-defined qualitative categorization with a quantitative impact score.
+  Unlike standard risk management, the exposure is a custom-defined look-up value for each combination (category, impact).
+  It also associates a meaning with the look-up value that indicates the type of risk treatment needed.
+  This SpiraApp ennables admins to create lookup tables that map two custom list values to output results with definitions.
+  Configure the four properties and enter matrix values as JSON to automatically populate output fields on save.
+productSummary: Configure and execute two-variable lookup tables for decision logic
+productDescription: >-
+  Adds automatic field population based on two-variable lookup tables. 
+  Define List A, List B, output look up (integer) and definition (text) fields.
+  Enter matrix values as JSON. The SpiraApp performs lookups and populates fields when you save.
+author: Inflectra Corporation
+url: https://inflectra.com
+icon: fa-solid fa-magnifying-glass-arrow-right
+license: MIT License
+copyright: Copyright Inflectra Corporation
+version: 1.1
+
+settingGroups:
+  - name: tableConfig
+    caption: Lookup Table Configuration
+
+productSettings:
+  - settingTypeId: 3
+    name: listAProperty
+    caption: List A Custom Property (Rows/Category)
+    artifactTypeId: 1
+    position: 1
+    tooltip: Select the custom list property to use as List A dimension (rows). Must follow "# - Text" format.
+    settingGroup: tableConfig
+
+  - settingTypeId: 3
+    name: listBProperty
+    caption: List B Custom Property (Columns/Impact)
+    artifactTypeId: 1
+    position: 2
+    tooltip: Select the custom list property to use as List B dimension (columns). Must follow "# - Text" format.
+    settingGroup: tableConfig
+
+  - settingTypeId: 3
+    name: outputValueProperty
+    caption: Output Value Property (Integer)
+    artifactTypeId: 1
+    position: 3
+    tooltip: Select the INTEGER custom property where the lookup result value will be stored
+    settingGroup: tableConfig
+
+  - settingTypeId: 3
+    name: outputDefinitionProperty
+    caption: Output Definition Property (Text, Recommended)
+    artifactTypeId: 1
+    position: 4
+    tooltip: Select the TEXT custom property where the value definition will be stored
+    settingGroup: tableConfig
+
+  - settingTypeId: 9
+    name: matrixData
+    caption: Matrix Data (JSON)
+    position: 5
+    tooltip: Enter the lookup matrix as JSON. Format - {"rowKey|colKey":{"value":"result","definition":"desc"}}. Example - {"1|1":{"value":"Low","definition":"Low risk"},"1|2":{"value":"Medium","definition":"Medium risk"}}
+    placeholder: '{"1|1":{"value":"Low","definition":"Low risk"}}'
+    settingGroup: tableConfig
+
+pageContents:
+  - pageId: 9
+    name: requirementDetailsLookupV2
+    code: file://lookupTable.js
